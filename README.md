@@ -5,6 +5,8 @@
 
 TypeScript, NestJS, GraphQL (Apollo Server), Prisma, PostgreSQL, Docker.
 
+Демо: https://card.verno-dev.com/graphql
+
 ![Apollo Sandbox](docs/sandbox.png)
 
 ## Запуск в Docker
