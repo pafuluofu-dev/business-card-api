@@ -1,0 +1,9 @@
+node_modules
+dist
+coverage
+*.tsbuildinfo
+.env
+*.log
+
+# генерируется командой prisma generate
+/src/generated/prisma

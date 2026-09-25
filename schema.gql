@@ -1,0 +1,78 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Experience {
+  achievements: [String!]!
+  company: String!
+  companySite: String
+  description: String!
+
+  """null — работаю сейчас"""
+  finishedAt: DateTime
+  id: ID!
+
+  """Период работы словами: «сентябрь 2024 — сентябрь 2026»"""
+  period: String!
+  position: String!
+  stack: [String!]!
+  startedAt: DateTime!
+}
+
+type Link {
+  id: ID!
+  label: String!
+  url: String!
+}
+
+"""Визитка разработчика"""
+type Profile {
+  description: String!
+  email: String!
+  experience: [Experience!]!
+
+  """Должность одной строкой"""
+  headline: String!
+  id: ID!
+  links: [Link!]!
+  location: String!
+  name: String!
+  projects: [Project!]!
+  skills(category: SkillCategory): [Skill!]!
+  slug: String!
+}
+
+type Project {
+  demoUrl: String
+  description: String!
+  id: ID!
+  name: String!
+  repoUrl: String!
+  stack: [String!]!
+}
+
+type Query {
+  """Без аргумента вернёт визитку владельца сервиса"""
+  profile(slug: String): Profile!
+}
+
+type Skill {
+  category: SkillCategory!
+  id: ID!
+  name: String!
+}
+
+"""Группа навыка: язык, фронтенд, бэкенд, данные, тесты, инструменты"""
+enum SkillCategory {
+  BACKEND
+  DATA
+  FRONTEND
+  LANGUAGE
+  TESTING
+  TOOLING
+}
